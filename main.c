@@ -1,42 +1,37 @@
 #include <stdio.h>
 #include "functions.h"
-#include "datatypes.h"
 int main() {
-	loadDataFromFile();
+    struct Customer customers[100];  // Gioi han toi da 100 khach hang
+    int customerCount = 0;
     int choice;
-    while (1) {
-        showMenu();  // Hien thi menu
-        scanf("%d", &choice);
 
+    while (1) {
+        displayMenu();
+        scanf("%d", &choice);
         switch (choice) {
             case 1:
-                displayBooks(); // Hien thi danh sach sach
+                displayCustomerList(customers, customerCount);
                 break;
             case 2:
-                addBook(); // Them sach moi
                 break;
             case 3:
-        		editBook(); // Sua thong tin sach
+                editCustomer(customers, customerCount);
                 break;
             case 4:
-                deleteBook(); // Xoa sach
                 break;
             case 5:
-            	sortBooksByPrice(); // Sap xep sach tang dan theo gia tien
                 break;
-            case 6:
-            	searchBookByTitle(); // Tim kiem sach
+			case 6:
                 break;
-            case 7:
-        		saveDataToFile(); // Luu du lieu vao file
-        		break;
-    		case 8:
-    			saveDataToFile();
-        		printf("\nCam on ban da su dung chuong trinh cua minh!\n");
-        		return 0;  // Thoat
+			case 7:
+                break;
+			case 8:               
+                break;    
+            case 9:
+                printf("Thoat chuong trinh. Cam on ban da su dung chuong trinh cua minh nhe!\n");
+                return 0;
             default:
-                printf("\nLua chon khong hop le. Vui long chon lai.\n");
+                printf("Lua chon khong hop le. Vui long ban hay nhap lai.\n");
         }
     }
-    return 0;
 }

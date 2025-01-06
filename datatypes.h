@@ -1,10 +1,6 @@
-// Dinh nghia cau truc book
-struct Book {
-    int id;            // ID của sách
-    char title[100];   // Ten sach
-    char author[50];   // Ten tac gia
-    int year;          // Nam xuat ban
-    int price;         // Gia sach
-}; 
-
-
+struct Customer {
+    int id;
+    char name[100];  // Do dai toi da cho ten
+    char address[200];  // Do dai toi da cho dia chi
+    int status;  // 0: Active, 1: Blocked
+};
